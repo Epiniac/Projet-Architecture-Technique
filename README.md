@@ -19,3 +19,9 @@ npm run dev
 ```js
 npm run build 
 ```
+
+### Construire l'image et démarrer le conteneur
+
+```js
+docker-compose up --build
+```

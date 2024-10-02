@@ -1,11 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom';
 import RootPage from './pages/Root.page';
 import ErrorPage from './pages/Error.page';
+import SandboxPage from './pages/Sandbox.page';
 
 const schema = {
   root: {
     path: '/',
     name: 'Root',
+  }, 
+  sandbox: {
+    path: '/sandbox',
+    name: 'Sandbox',
   }
 } as const;
 
@@ -16,6 +21,11 @@ const router = createBrowserRouter([
   {
     path: routes.root.path,
     element: <RootPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: routes.sandbox.path,
+    element: <SandboxPage/>,
     errorElement: <ErrorPage/>
   },
   {
