@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
 import axiosService, { EMethod, EOrigineApi, IDatas } from "../../services/axios.service";
 
 const SandboxPage = () => {
