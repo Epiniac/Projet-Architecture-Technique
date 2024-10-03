@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeMirror, { color } from '@uiw/react-codemirror';
+import CodeMirror from '@uiw/react-codemirror';
 import { androidstudio } from '@uiw/codemirror-theme-androidstudio';
 import { javascript } from '@codemirror/lang-javascript';
 import { RouterProvider } from 'react-router-dom';
@@ -28,6 +28,7 @@ const myButtons = {
 }
 
 // MAIN part
+
 const  App = () => {
   const [value, setValue] = React.useState("// Write your code here...");
   const [result, setResult] = React.useState('');
