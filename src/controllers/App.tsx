@@ -9,11 +9,23 @@ const extensions = [javascript ({ jsx:true })];
 
 const  App = () => {
   const [value, setValue] = React.useState("console.log('hello world!');");
-  const onChange = React.useCallback((val, viewUpdate) => {
+  const onChange = React.useCallback((val: React.SetStateAction<string>, _viewUpdate: any) => {
     console.log('val:', val);
     setValue(val);
   }, []);
-  return <><RouterProvider router={router} /><CodeMirror value={value} height="200px" theme={androidstudio} extensions={extensions} onChange={onChange} /></>;
+  const runCode = () => {
+    try{
+      eval(value);
+      alert("Your code is running.");
+    } catch(err){
+      alert(err);
+    }
+  };
+  return  <>
+            <RouterProvider router={router} />
+            <CodeMirror value={value} height="200px" theme={androidstudio} extensions={extensions} onChange={onChange} />
+            <button onClick={runCode}>Run Code</button>
+          </>;
 };
 
 export default App;
