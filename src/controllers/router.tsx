@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import RootPage from './pages/Root.page';
 import ErrorPage from './pages/Error.page';
 import SandboxPage from './pages/Sandbox.page';
+import SignUpPage from './pages/SignUp.page';
+import SignInPage from './pages/SignIn.page';
 
 const schema = {
   root: {
@@ -11,6 +13,14 @@ const schema = {
   sandbox: {
     path: '/sandbox',
     name: 'Sandbox',
+  }, 
+  signup: {
+    path: '/signup',
+    name: 'Signup',
+  }, 
+  signin: {
+    path: '/signin',
+    name: 'Signin',
   }
 } as const;
 
@@ -26,6 +36,16 @@ const router = createBrowserRouter([
   {
     path: routes.sandbox.path,
     element: <SandboxPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: routes.signup.path,
+    element: <SignUpPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: routes.signin.path,
+    element: <SignInPage/>,
     errorElement: <ErrorPage/>
   },
   {
